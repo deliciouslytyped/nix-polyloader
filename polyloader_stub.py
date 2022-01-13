@@ -6,9 +6,9 @@
 """true"
 SCRIPT_PATH="$(realpath -s "$BASH_SOURCE")"
 if ! command -v nix-shell; then
-  exec python "$SCRIPT_PATH"
+  exec python "$SCRIPT_PATH" "$@"
 else
-  exec nix-shell "$SCRIPT_PATH"
+  exec nix-shell "$SCRIPT_PATH" "$@"
 fi
 "true"""
 
